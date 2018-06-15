@@ -118,6 +118,22 @@ class Agilent4284A:
         return retval
 
     def get_impedance(self, delay=None):
+        """Short summary.
+
+        Parameters
+        ----------
+        delay : int
+            Delay of the query in second. This parameter will be directly passed
+            to pyvisa query method.
+
+        Returns
+        -------
+        [float, float, float]
+            Measured impedance in designated format. The last one maybe status.
+            For esample, if ZTD(Z-theta (deg)) is designated, the return values
+            will have [Z, theta (deg), status] in float.
+
+        """
         self.trigger_immediate()
         raw_string = self.inst.query("FETCh:IMP?", delay).split(',')
         retval = [float(s) for s in raw_string]
