@@ -5,7 +5,7 @@ import visa
 # Agilent 4284A with VISA interface
 
 # for more info, please refer to the official document
-# https://literature.cdn.keysight.com/litweb/pdf/04284-97020.pdf?id=1000002667-1:epsg:man
+# https://literature.cdn.keysight.com/litweb/pdf/04284-97020.pdf
 
 
 class Agilent4284A:
