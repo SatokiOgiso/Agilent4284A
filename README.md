@@ -16,5 +16,5 @@ python -m unittest discover
 ```
 
 ## Reference  
-https://literature.cdn.keysight.com/litweb/pdf/04284-97020.pdf?id=1000002667-1:epsg:man
+https://literature.cdn.keysight.com/litweb/pdf/04284-97020.pdf
 
