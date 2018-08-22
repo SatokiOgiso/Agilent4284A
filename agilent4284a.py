@@ -149,3 +149,36 @@ class Agilent4284A:
 
         """
         return self.inst.query("*IDN?")
+
+    def set_aperture(self, aperture):
+        """Set Aperture of measurement.
+
+        argument : "Aperture(,integer)"
+
+        Parameters
+        ----------
+        Aperture : "SHORt", ”MEDium” or "LONG"
+        integer range : 1-256
+
+        example :   "SHOR"
+                    "MED,71"
+
+        Returns
+        -------
+        (int, pyvisa.constants.StatusCode)
+            result of pyvisa write function
+        """
+        retval = self.inst.write("APER " + str(aperture))
+        self.inst.write("*WAI")
+        return retval
+
+    def get_aperture(self):
+        """Get aperture of the current instrument
+
+        Returns
+        -------
+        String
+            current aperture of instrument
+
+        """
+        return str(self.inst.query("APER?"))
